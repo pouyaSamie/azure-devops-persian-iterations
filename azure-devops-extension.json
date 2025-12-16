@@ -1,0 +1,39 @@
+{
+    "manifestVersion": 1,
+    "id": "PersianIterationManagerHub",
+    "publisher": "PouyaSamie",
+    "version": "1.0.110",
+    "name": "Persian Iteration",
+    "description": "Persian Iteration Manager Hub",
+    "categories": [
+        "Azure Boards",
+        "Azure Pipelines"
+    ],
+    "scopes": [
+        "vso.work",
+        "vso.work_write"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "logo.png"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "files": [
+        {
+            "path": "static",
+            "addressable": true
+        },
+        {
+            "path": "dist",
+            "addressable": true
+        }
+    ]
+}

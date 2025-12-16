@@ -1,0 +1,17 @@
+{
+    "contributions": [
+        {
+            "id": "iteration-manager-hub",
+            "type": "ms.vss-web.hub",
+            "targets": [
+                "ms.vss-work-web.work-hub-group"
+            ],
+            "properties": {
+                "name": "Iteration Manager",
+                "uri": "dist/IterationManagerHub/IterationManagerHub.html",
+                "icon": "asset://static/sample-icon.png",
+                "supportsMobile": true
+            }
+        }
+    ]
+}

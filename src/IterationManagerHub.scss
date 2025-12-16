@@ -1,0 +1,227 @@
+@import "node_modules/azure-devops-ui/Core/_platformCommon.scss";
+
+.iteration-manager-page {
+    padding: $spacing-16;
+    color: $primary-text;
+    background: $backgroundColor;
+
+    /* Theme hand-off for the Jalali date picker */
+    --cl-color-primary: #{$communication-background};
+    --cl-color-primary-light: #{$communication-tint-20};
+    --cl-color-black: #{$primary-text};
+    --cl-color-disabled: #{$disabled-text};
+    --cl-color-error: #{$status-error-text};
+}
+
+.iteration-manager-toolbar {
+    display: flex;
+    align-items: center;
+    gap: $spacing-8;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-12;
+    color: $secondary-text;
+
+    strong {
+        color: $primary-text;
+        margin-right: $spacing-4;
+    }
+}
+
+.iteration-manager-messages {
+    margin-bottom: $spacing-12;
+    display: grid;
+    gap: $spacing-8;
+}
+
+.iteration-table {
+    background: $calloutBackgroundColor;
+    border: 1px solid $subtleBorderColor;
+    border-radius: $radius-medium;
+    overflow-x: auto;
+    box-shadow: 0 1px 3px $calloutShadowSecondaryColor;
+}
+
+.iteration-table table {
+    width: 100%;
+    border-collapse: collapse;
+    color: $primary-text;
+}
+
+.iteration-table th,
+.iteration-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid $subtleBorderColor;
+    vertical-align: middle;
+}
+
+.iteration-table th {
+    font-weight: $fontWeightSemiBold;
+    background: $neutral-4;
+    color: $secondary-text;
+}
+
+.iteration-table tr:last-child td {
+    border-bottom: none;
+}
+
+.iteration-table-row.selected {
+    background: $communication-tint-40;
+}
+
+.iteration-table .actions {
+    white-space: nowrap;
+    display: flex;
+    gap: $spacing-8;
+}
+
+.add-iteration-form {
+    display: grid;
+    gap: $spacing-12;
+}
+
+.iteration-summary {
+    display: grid;
+    gap: 4px;
+    padding: $spacing-8;
+    border: 1px solid $subtleBorderColor;
+    border-radius: $radius-medium;
+    background: $neutral-2;
+}
+
+.iteration-name {
+    font-weight: $fontWeightSemiBold;
+    color: $primary-text;
+}
+
+.iteration-path {
+    color: $secondary-text;
+    font-size: $fontSize;
+    direction: ltr;
+}
+
+.iteration-current-dates {
+    color: $secondary-text;
+}
+
+.date-picker-row {
+    display: grid;
+    gap: $spacing-12;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.date-picker-label {
+    font-weight: $fontWeightSemiBold;
+    margin-bottom: 4px;
+    color: $secondary-text;
+}
+
+.iteration-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+}
+
+.iteration-field .DatePicker__input,
+.iteration-field .react-modern-calendar-datepicker__input {
+    width: 100%;
+    background: $backgroundColor;
+    color: $primary-text;
+    border: 1px solid $subtleBorderColor;
+    border-radius: $radius-medium;
+    padding: 8px 10px;
+}
+
+.iteration-field .DatePicker__input::placeholder,
+.iteration-field .react-modern-calendar-datepicker__input::placeholder {
+    color: $secondary-text;
+}
+
+.iteration-field .DatePicker__input:focus,
+.iteration-field .react-modern-calendar-datepicker__input:focus {
+    outline: none;
+    border-color: $communication-foreground;
+    box-shadow: 0 0 0 1px $communication-background;
+}
+
+.iteration-dialog-callout,
+.iteration-dialog-callout.scroll-auto {
+    /* Let the calendar popper escape the dialog container */
+    overflow: visible !important;
+    max-height: none !important;
+}
+
+.iteration-dialog-callout .bolt-dialog-root,
+.iteration-dialog-callout .bolt-dialog-content,
+.iteration-dialog-callout .bolt-dialog-body,
+.iteration-dialog-callout .bolt-dialog {
+    overflow: visible !important;
+}
+
+.iteration-dialog-callout {
+    width: min(720px, calc(100vw - 64px));
+}
+
+.iteration-dialog-callout .DatePicker {
+    width: 100%;
+}
+
+.iteration-dialog-callout .DatePicker__calendarContainer {
+    left: 0;
+    right: auto;
+    transform: none;
+    width: min(360px, 100%);
+    top: calc(100% + 8px);
+    z-index: 2500;
+}
+
+.iteration-dialog-callout .DatePicker__calendarContainer.-top {
+    bottom: calc(100% + 8px);
+}
+
+.iteration-dialog-callout .Calendar {
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.iteration-dialog-callout .bolt-panel-footer {
+    position: relative;
+    z-index: 3500;
+}
+
+.DatePicker__calendarArrow {
+    border-color: transparent transparent $calloutBackgroundColor transparent;
+}
+
+.Calendar {
+    background: $calloutBackgroundColor;
+    color: $primary-text;
+    box-shadow: 0 8px 24px $calloutShadowColor, 0 0 0 1px $subtleBorderColor;
+    --cl-color-primary: #{$communication-background};
+    --cl-color-primary-light: #{$communication-tint-20};
+    --cl-color-black: #{$primary-text};
+    --cl-color-disabled: #{$disabled-text};
+    --cl-color-error: #{$status-error-text};
+}
+
+.Calendar__header {
+    color: $primary-text;
+}
+
+.Calendar__weekDays,
+.Calendar__monthYear {
+    color: $secondary-text;
+}
+
+.Calendar__day:not(.-blank):not(.-selectedStart):not(.-selectedEnd):not(.-selectedBetween):not(.-selected):hover {
+    background: $neutral-2;
+    color: $primary-text;
+}
+
+.Calendar__day.-selected,
+.Calendar__day.-selectedStart,
+.Calendar__day.-selectedEnd {
+    background: $communication-background;
+    color: $text-on-communication-background;
+}
